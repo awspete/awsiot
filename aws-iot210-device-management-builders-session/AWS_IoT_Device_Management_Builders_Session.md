@@ -137,7 +137,7 @@ AWS IoT sends progress events about each message as it passes from your devices 
 
 To enable [AWS IoT logging](https://docs.aws.amazon.com/iot/latest/developerguide/cloud-watch-logs.html), you must create an IAM role, register the role with AWS IoT, and then configure AWS IoT logging.
 
-Go to the AWS IoT console by logging into your AWS account and going to the IoT Core Service
+Go to the AWS IoT console by logging into your AWS account and going to the AWS IoT Core Service. Also make sure that you are in the same region where you deployed the AWS Cloudformation stack.
 
 1. Get started (only if no resources are provisioned)
 2. Settings
