@@ -538,7 +538,7 @@ Go to the AWS IoT Console
 6. Subscription topic: **$aws/things/#**
 7. Subscribe
 8. Subscribe to a topic
-9. Subscription topic: **sys/info**
+9. Subscription topic: **music/updates**
 10. Subscribe
 
 
