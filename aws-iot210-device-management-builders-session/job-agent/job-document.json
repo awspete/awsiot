@@ -1,0 +1,5 @@
+{
+    "operation": "spotify",
+    "spotify": "pip install --user spotipy",
+    "topic": "music/updates"
+}
