@@ -938,4 +938,4 @@ Deleting the resources that where created during the workshop is a semi-automate
 
 * Go to the AWS CloudFormation console
 
-		Delete the stack IoTDeviceManagementWS
+		Delete the stack
