@@ -383,36 +383,7 @@ The device that will be created will also be put into a thing group and a thing 
 
 		aws iot register-thing --template-body file://templateBody.json --parameters '[OUTPUT_FROM_THE_PREVIOUS_COMMAND]'
 
-* In output from the previous command you receive the certificate for your thing. Copy the certificate pem from the output and save it into a file with the following command
 
-		echo -e [CERTIFICATE_PEM] > $THING_NAME.crt
-
-* Go to the AWS IoT Console:
-
-		1. Manage
-		2. Things
-		3. Click on your thing
-		4. Security
-		5. Click the certificate
-		6. Policies
-		7. Click the Policy name
-
-
-* Go to the AWS IoT Console:
-
-		1. Subscribe to the topic: iot/ws
-
-* Go to your EC2 instance:
-
-		# publish a message to AWS IoT
-		mosquitto_pub --cafile ~/root.ca.bundle.pem \
-		  --cert $THING_NAME.crt --key $THING_NAME.key \
-		  -h $IOT_ENDPOINT -p 8883 -q 0 -t iot/ws \
-		  -i $THING_NAME --tls-version tlsv1.2 \
-			-m "{\"volume\": \"8\", \"date\": \"$(date)\"}" -d
-
-
-* Go to the AWS IoT Console and check if a message has arrived
 
 
 <a id="Bulk_Device_Provisioning"></a>
