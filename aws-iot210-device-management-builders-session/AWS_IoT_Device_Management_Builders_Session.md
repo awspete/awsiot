@@ -597,7 +597,7 @@ The job document is setup so that it will install a new music package on to the 
 	* **callback\_jobs\_get\_accepted - JOBS AVAILABLE**
 * Feel free to create more jobs
 
-One the job has completed you can check back on the topic subscriptions to review the messages. on the competed topic, you should see a message for this job. verify that you see:
+Once the job has completed you can check back on the topic subscriptions to review the messages. on the events topic, you should see a message for this job. verify that you see:
 
 "numberOfSucceededThings": 1,
 
@@ -627,7 +627,7 @@ We will simulate "now playing" on the devices by adding reported songs that are 
 		aws iot update-indexing-configuration \
 		  --thing-indexing-configuration thingIndexingMode=REGISTRY_AND_SHADOW
 
-* Verify if fleet indexing is enabled for both registry and shadow
+* Verify if fleet indexing is enabled for both registry and shadow.
 
 		aws iot get-indexing-configuration
 
@@ -651,7 +651,7 @@ We will simulate "now playing" on the devices by adding reported songs that are 
 		--query-string "shadow.reported.nowplaying:Chris Cornell* AND attributes.room:*"
 
 
-* You can find the shadow document for a device also in the AWS IoT Console
+* You can also find the shadow document for a device in the AWS IoT Console:
 
 	1. Go to the AWS IoT Console
 	2. Manage
@@ -666,7 +666,7 @@ We will simulate "now playing" on the devices by adding reported songs that are 
 ## Thing Groups
 [Thing groups](https://docs.aws.amazon.com/iot/latest/developerguide/thing-groups.html) allow you to manage several things at once by categorizing them into groups.
 
-Imagine you have millions of smart speakers you want to provision that are already being used by customers. Instead of applying a device policy to every speaker, you can group them by smarthome and apply an manage the policy based on that customer's device home.
+Imagine you have millions of smart speakers you want to provision that are already being used by customers. Instead of applying a device policy to every speaker, you can group them by smarthome and apply and manage the policy based on that customer's device home.
 
 **In this exercise** you will learn how you can authorize devices by attaching an IoT policy to a thing group instead to a device certificate. The policy attached to the thing group will make use of policy variables so that a device is only allowed to publish to:
 
@@ -862,7 +862,7 @@ Deleting the resources that where created during the workshop is a semi-automate
 * First action is to deprecate the thing type as it will take round about 5 minutes to finish
 
 		# deprecate the thing type
-		aws iot deprecate-thing-type --thing-type-name speaker-type
+		aws iot deprecate-thing-type --thing-type-name speakers-type
 
 
 * The things that you have created can be deleted by a script. **WARNING** this script uses the prefixes for devices in the workshop, *speakers*
@@ -898,7 +898,7 @@ Deleting the resources that where created during the workshop is a semi-automate
 		  --certificate-id [YOUR_CA_CERTIFICATE_ID]
 
 		# deprecation of thing-type needs 5min. If this command is not successful, wait and try again
-		aws iot delete-thing-type --thing-type-name speaker-type
+		aws iot delete-thing-type --thing-type-name speakers-type
 
 
 * If there are any remaining resources like things, certificates, policies, etc. delete them manually
