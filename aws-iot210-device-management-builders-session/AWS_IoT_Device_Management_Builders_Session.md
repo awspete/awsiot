@@ -907,4 +907,4 @@ Deleting the resources that where created during the workshop is a semi-automate
 
 * Go to the AWS CloudFormation console
 
-		Delete the stack
+		Delete the iotbuildersession AWS Cloudformation stack that was created as part of this builders session
